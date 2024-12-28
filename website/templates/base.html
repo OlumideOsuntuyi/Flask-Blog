@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          crossorigin="anonymous"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            crossorigin="anonymous"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+        <link 
+            rel="stylesheet"  
+            type="text/css" 
+            href="{{url_for('static', filename='base.css')}}">
+        <link 
+            rel="stylesheet"  
+            type="text/css" 
+            href="{{url_for('static', filename='home.css')}}">
+        <link 
+            rel="stylesheet"  
+            type="text/css" 
+            href="{{url_for('static', filename='login.css')}}">
+        <link 
+            rel="stylesheet"  
+            type="text/css" 
+            href="{{url_for('static', filename='notifications.css')}}">
+        <link 
+        rel="stylesheet"  
+        type="text/css" 
+        href="{{url_for('static', filename='welcome_page.css')}}">
+        <title>{% block title%}Home{% endblock%}</title>
+        
+    </head>
+    
+
+    <body>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+        ></script>
+        <script>
+            type="text/javascript"
+            src="{{ url_for('static', filename='index.js')}}"
+        </script>
+
+        <div class="container" id="base-navbar-container">
+            <nav class="navbar row sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between rounded-navbar">
+                <button class="navbar-toggler col" type="button" data-toggle="collapse" data-target="#navbar"> 
+                    <span class="navbar-toggler-icon"></span> 
+                </button>
+                <a class="navbar-brand col" id="brand">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182 45.83"><defs><style>.cls-1{isolation:isolate;}.cls-2,.cls-5{mix-blend-mode:multiply;}.cls-2{opacity:0.8;}.cls-3{fill:#05172d;}.cls-4{fill:#fff;}.cls-5{opacity:0.87;}.cls-6{fill:#f2f2f2;}</style></defs><g class="cls-1"><g id="Layer_1" data-name="Layer 1"><g class="cls-2"><path class="cls-3" d="M557,493.53a1,1,0,0,1,1-1h4.55a1,1,0,0,1,1,1v32.79a1,1,0,0,1-1,1H558a1,1,0,0,1-1-1Zm3,14.38a1,1,0,0,1,1-1h18.26a1,1,0,0,1,1,1v4.32a1,1,0,0,1-1,1H561.05a1,1,0,0,1-1-1Zm16-14.38a1,1,0,0,1,1-1h4.56a1,1,0,0,1,1,1v32.79a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><path class="cls-3" d="M595.59,526.09a11,11,0,0,1-4.46-4.5,20,20,0,0,1-1.47-5.74c-.06-.55-.11-1.45-.11-2V506c0-.55.05-1.45.11-2a20,20,0,0,1,1.47-5.74,11,11,0,0,1,4.46-4.5,14.76,14.76,0,0,1,13.33,0,11.11,11.11,0,0,1,4.46,4.5,20.35,20.35,0,0,1,1.47,5.74c.06.55.11,1.45.11,2v7.85c0,.55-.05,1.45-.11,2a20.35,20.35,0,0,1-1.47,5.74,11.11,11.11,0,0,1-4.46,4.5,14.76,14.76,0,0,1-13.33,0Zm9.77-5.72a5.09,5.09,0,0,0,2.07-2.14,7.27,7.27,0,0,0,.63-2.21c.05-.55.1-1.45.1-2v-8.19c0-.55,0-1.45-.1-2a7.27,7.27,0,0,0-.63-2.21,5.09,5.09,0,0,0-2.07-2.14,6.82,6.82,0,0,0-6.22,0,5.21,5.21,0,0,0-2.07,2.14,7.44,7.44,0,0,0-.62,2.21c-.06.55-.11,1.45-.11,2V514c0,.55,0,1.45.11,2a7.44,7.44,0,0,0,.62,2.21,5.21,5.21,0,0,0,2.07,2.14,6.82,6.82,0,0,0,6.22,0Z" transform="translate(-548.5 -491.17)"/><path class="cls-3" d="M617.11,493.53a1,1,0,0,1,1-1h23.51a1,1,0,0,1,1,1v4.32a1,1,0,0,1-1,1H618.11a1,1,0,0,1-1-1Zm9.47,2.85a1,1,0,0,1,1-1h4.56a1,1,0,0,1,1,1v29.94a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><path class="cls-3" d="M646.44,493.53a1,1,0,0,1,1-1H652a1,1,0,0,1,1,1v32.79a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Zm3,15a1,1,0,0,1,1-1h9.13c.55,0,1.45-.06,2-.12a3.07,3.07,0,0,0,1.08-.42,3.68,3.68,0,0,0,1.4-1.52,4.91,4.91,0,0,0,.5-2.25,5,5,0,0,0-.49-2.28,3.62,3.62,0,0,0-1.39-1.53,3.08,3.08,0,0,0-1.1-.42,18.81,18.81,0,0,0-2-.12h-9.13a1,1,0,0,1-1-1v-4.32a1,1,0,0,1,1-1h9c.55,0,1.45.05,2,.11a16.4,16.4,0,0,1,4.73,1.22A9.41,9.41,0,0,1,670,497.6a12.11,12.11,0,0,1,0,11.19,9.43,9.43,0,0,1-3.84,3.72,16.61,16.61,0,0,1-4.73,1.21c-.55.06-1.45.11-2,.11h-9a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><path class="cls-3" d="M681.79,526.09a11,11,0,0,1-4.46-4.5,20.35,20.35,0,0,1-1.47-5.74c-.06-.55-.11-1.45-.11-2V506c0-.55,0-1.45.11-2a20.35,20.35,0,0,1,1.47-5.74,11,11,0,0,1,4.46-4.5,14.76,14.76,0,0,1,13.33,0,11,11,0,0,1,4.46,4.5,20.35,20.35,0,0,1,1.47,5.74c.06.55.11,1.45.11,2v7.85c0,.55,0,1.45-.11,2a20.35,20.35,0,0,1-1.47,5.74,11,11,0,0,1-4.46,4.5,14.76,14.76,0,0,1-13.33,0Zm9.78-5.72a5.21,5.21,0,0,0,2.07-2.14,7.44,7.44,0,0,0,.62-2.21c.06-.55.11-1.45.11-2v-8.19c0-.55,0-1.45-.11-2a7.44,7.44,0,0,0-.62-2.21,5.21,5.21,0,0,0-2.07-2.14,6.82,6.82,0,0,0-6.22,0,5.09,5.09,0,0,0-2.07,2.14,7.27,7.27,0,0,0-.63,2.21c-.06.55-.1,1.45-.1,2V514c0,.55,0,1.45.1,2a7.27,7.27,0,0,0,.63,2.21,5.09,5.09,0,0,0,2.07,2.14,6.82,6.82,0,0,0,6.22,0Z" transform="translate(-548.5 -491.17)"/><path class="cls-3" d="M703.31,493.53a1,1,0,0,1,1-1h23.51a1,1,0,0,1,1,1v4.32a1,1,0,0,1-1,1H704.31a1,1,0,0,1-1-1Zm9.48,2.85a1,1,0,0,1,1-1h4.56a1,1,0,0,1,1,1v29.94a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/></g><path class="cls-4" d="M556,492.53a1,1,0,0,1,1-1h4.55a1,1,0,0,1,1,1v32.79a1,1,0,0,1-1,1H557a1,1,0,0,1-1-1Zm3,14.38a1,1,0,0,1,1-1h18.26a1,1,0,0,1,1,1v4.32a1,1,0,0,1-1,1H560.05a1,1,0,0,1-1-1Zm16-14.38a1,1,0,0,1,1-1h4.56a1,1,0,0,1,1,1v32.79a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><path class="cls-4" d="M594.59,525.09a11,11,0,0,1-4.46-4.5,20,20,0,0,1-1.47-5.74c-.06-.55-.11-1.45-.11-2V505c0-.55.05-1.45.11-2a20,20,0,0,1,1.47-5.74,11,11,0,0,1,4.46-4.5,14.76,14.76,0,0,1,13.33,0,11.11,11.11,0,0,1,4.46,4.5,20.35,20.35,0,0,1,1.47,5.74c.06.55.11,1.45.11,2v7.85c0,.55-.05,1.45-.11,2a20.35,20.35,0,0,1-1.47,5.74,11.11,11.11,0,0,1-4.46,4.5,14.76,14.76,0,0,1-13.33,0Zm9.77-5.72a5.09,5.09,0,0,0,2.07-2.14,7.27,7.27,0,0,0,.63-2.21c.05-.55.1-1.45.1-2v-8.19c0-.55,0-1.45-.1-2a7.27,7.27,0,0,0-.63-2.21,5.09,5.09,0,0,0-2.07-2.14,6.82,6.82,0,0,0-6.22,0,5.21,5.21,0,0,0-2.07,2.14,7.44,7.44,0,0,0-.62,2.21c-.06.55-.11,1.45-.11,2V513c0,.55,0,1.45.11,2a7.44,7.44,0,0,0,.62,2.21,5.21,5.21,0,0,0,2.07,2.14,6.82,6.82,0,0,0,6.22,0Z" transform="translate(-548.5 -491.17)"/><path class="cls-4" d="M616.11,492.53a1,1,0,0,1,1-1h23.51a1,1,0,0,1,1,1v4.32a1,1,0,0,1-1,1H617.11a1,1,0,0,1-1-1Zm9.47,2.85a1,1,0,0,1,1-1h4.56a1,1,0,0,1,1,1v29.94a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><path class="cls-4" d="M645.44,492.53a1,1,0,0,1,1-1H651a1,1,0,0,1,1,1v32.79a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Zm3,15a1,1,0,0,1,1-1h9.13c.55,0,1.45-.06,2-.12a3.07,3.07,0,0,0,1.08-.42,3.68,3.68,0,0,0,1.4-1.52,4.91,4.91,0,0,0,.5-2.25,5,5,0,0,0-.49-2.28,3.62,3.62,0,0,0-1.39-1.53,3.08,3.08,0,0,0-1.1-.42,18.81,18.81,0,0,0-2-.12h-9.13a1,1,0,0,1-1-1v-4.32a1,1,0,0,1,1-1h9c.55,0,1.45.05,2,.11a16.4,16.4,0,0,1,4.73,1.22A9.41,9.41,0,0,1,669,496.6a12.11,12.11,0,0,1,0,11.19,9.43,9.43,0,0,1-3.84,3.72,16.61,16.61,0,0,1-4.73,1.21c-.55.06-1.45.11-2,.11h-9a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><path class="cls-4" d="M680.79,525.09a11,11,0,0,1-4.46-4.5,20.35,20.35,0,0,1-1.47-5.74c-.06-.55-.11-1.45-.11-2V505c0-.55,0-1.45.11-2a20.35,20.35,0,0,1,1.47-5.74,11,11,0,0,1,4.46-4.5,14.76,14.76,0,0,1,13.33,0,11,11,0,0,1,4.46,4.5,20.35,20.35,0,0,1,1.47,5.74c.06.55.11,1.45.11,2v7.85c0,.55,0,1.45-.11,2a20.35,20.35,0,0,1-1.47,5.74,11,11,0,0,1-4.46,4.5,14.76,14.76,0,0,1-13.33,0Zm9.78-5.72a5.21,5.21,0,0,0,2.07-2.14,7.44,7.44,0,0,0,.62-2.21c.06-.55.11-1.45.11-2v-8.19c0-.55,0-1.45-.11-2a7.44,7.44,0,0,0-.62-2.21,5.21,5.21,0,0,0-2.07-2.14,6.82,6.82,0,0,0-6.22,0,5.09,5.09,0,0,0-2.07,2.14,7.27,7.27,0,0,0-.63,2.21c-.06.55-.1,1.45-.1,2V513c0,.55,0,1.45.1,2a7.27,7.27,0,0,0,.63,2.21,5.09,5.09,0,0,0,2.07,2.14,6.82,6.82,0,0,0,6.22,0Z" transform="translate(-548.5 -491.17)"/><path class="cls-4" d="M702.31,492.53a1,1,0,0,1,1-1h23.51a1,1,0,0,1,1,1v4.32a1,1,0,0,1-1,1H703.31a1,1,0,0,1-1-1Zm9.48,2.85a1,1,0,0,1,1-1h4.56a1,1,0,0,1,1,1v29.94a1,1,0,0,1-1,1h-4.56a1,1,0,0,1-1-1Z" transform="translate(-548.5 -491.17)"/><g class="cls-5"><rect class="cls-3" x="1" y="41.83" width="181" height="4" rx="1"/></g><rect class="cls-4" y="40.83" width="181" height="4" rx="1"/><path class="cls-6" d="M615,492" transform="translate(-548.5 -491.17)"/></g></g></svg>
+                    
+                </a>
+                <div class="collapse navbar-collapse justify-content-between" id="navbar">
+                    <div class="navbar-nav col d-flex">
+                        {% if user.is_authenticated %}
+                            <a class="nav-item nav-link" id="home" href="/">Home</a>
+                            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                        {% else %}
+                            <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                        {% endif %}
+                    </div>
+                    {% if user.is_authenticated %}
+                        <form class="form-inline row justify-content-between align-items-center" id="search-box">
+                            <input 
+                                class="form-control mr-sm-2 col" 
+                                type="search" 
+                                placeholder="Search articles" 
+                                aria-label="Search">
+                                <button 
+                                class="btn search-submit" 
+                                type="submit"
+                            >
+                            <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    {% else %}
+                    {% endif %}
+                </div>
+          </nav>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="container-fluid row-9" id="content">
+            {% block content%} {% endblock %}
+        </div>
+    </body>
+</html>

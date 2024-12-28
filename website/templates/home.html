@@ -1,0 +1,252 @@
+{% extends "base.html" %} {% block title %} Flask Application {% endblock %}
+
+{% block content %}
+
+  <div class="container-fluid" id="home-page">
+    <div class="welcome-row row justify-content-between">
+      <div class="col-lg-8 welcome-area article-list">
+        <div class="row section-title">
+          Welcome, {{user.email}}
+        </div>
+        <div class="col welcome-body">
+          <ul class="feed">
+            <li class="feed-title">
+              <strong>Last updated: <small>2 minutes ago.</small> </strong>
+            </li>
+            {% for post in feed %}
+              <li class="fd-post card">
+                <div class="card-header"> 
+                  <span class="author-details">
+                    <img src="{{url_for('static', filename=post.author_avatar)}}" alt="" class="ntf-img t-tp-tr"> 
+                    <span class="name-time">
+                      <b class="name" href="">{{post.author_username}}</b><i class="time">{{post.date}}</i>
+                    </span>
+                  </span>
+                  <button type="submit" class="btn btn-primary">Follow</button>
+                </div>
+                <div class="card-body">
+                  <div class="text">{{post.content}}</div>
+                </div>
+
+                <div class="card-footer">
+                  <div class="ini-btns">
+                    <div class="like-button tg-btn">
+                      <input class="tg-btn-on" type="checkbox" id="fd-like-{{post.id}}">
+                      <label class="tg-btn-lbl" for="fd-like-{{post.id}}">
+                        <svg class="tg-btn-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                      </label>
+                      <span class="tg-btn-txt one">{{post.likes}}</span>
+                      <span class="tg-btn-txt two">{{post.likes}}</span>
+                    </div>
+                    <div class="comment-button" type="checked" href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-400h400q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480H280q-17 0-28.5 11.5T240-440q0 17 11.5 28.5T280-400Zm0-120h400q17 0 28.5-11.5T720-560q0-17-11.5-28.5T680-600H280q-17 0-28.5 11.5T240-560q0 17 11.5 28.5T280-520Zm0-120h400q17 0 28.5-11.5T720-680q0-17-11.5-28.5T680-720H280q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM160-240q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v623q0 27-24.5 37.5T812-148l-92-92H160Z"/></svg>
+                      <span>{{post.comments}}</span>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="bmk-btn tg-btn">
+                      <input class="tg-btn-on" type="checkbox" id="fd-bookmark-{{post.id}}">
+                      <label class="tg-btn-lbl" for="fd-bookmark-{{post.id}}">
+                        <svg class="tg-btn-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#FFFFFF"><path d="m480-240-168 72q-40 17-76-6.5T200-241v-519q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v519q0 43-36 66.5t-76 6.5l-168-72Z"/></svg>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col notifications">
+        <span href="/" type="submit" title="delete-notifications"><div class="col title">Notifications</div>
+          <span class="badge col-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#e8eaed"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+          </span> 
+        </span>
+        <div class="list align-items-center">
+          <div class="ntf-crd card">
+            <div class="ntf-title"> 
+              <img src="{{url_for('static', filename='images/avatar/vibrent_1.png')}}" alt="" class="ntf-img t-tp-tr"> 
+              <div class="t-tp card-anchor">
+                <div class="card-blur"></div>
+                <div class="card">
+                  <div class="card-title">
+                    <h5 class="pr-nm">Quadri Ngozi</h5>
+                    <p class="pr-des">Social Activist</p>
+                  </div>
+                  <div class="card-body"> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ntf-txt card-body"> 
+              <a href="">Quadrifola</a> posted a new video, Visit her profile to check it out
+            </div>
+            <div class="ntf-btns">
+              <button 
+                class=""
+                title="like"
+                type="submit">
+                Follow back
+              </button>
+            </div>
+          </div>
+          <div class="ntf-crd card">
+            <div class="ntf-title"> 
+              <img src="{{url_for('static', filename='images/avatar/vibrent_2.png')}}" alt="" class="ntf-img"> 
+            </div>
+            <div class="ntf-txt card-body"> 
+              Abdul commented on your post, <i>Nice looking shoes there!</i>
+            </div>
+            <div class="ntf-btns"> 
+              <button 
+                class=""
+                title="follow"
+                type="submit">
+                Follow back
+              </button></div>
+          </div>
+        </div>
+        <button>See more</button>
+      </div>
+    </div>
+
+    <div class="news-section container-fluid row">
+      <div class="col-lg-3 article-list justify-content-between">
+        <div class="article-list-title"> Trending </div>
+          {% for item in link_articles %}
+            <article class="article">
+              <div class="post-content">
+                {{item.name}}
+              </div>
+            </article>
+          {% endfor %}
+      </div>
+      <div class="col-lg-9 exp-sc article-list">
+        <div class="article-list-title row-lg-1"> Sections </div>
+        <div id="carouselExampleIndicators" class="carousel exp-crl slide row-lg-9" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner h-100">
+            <div class="carousel-item card active">
+              <div class="card-header"> <span>Explore Gaming Information </span>
+                <!-- <button class="" type="click" href="">View More Posts About Gaming</button>--> 
+              </div>
+              <div class="card-body">
+                <img src="{{url_for('static', filename='images/content/gaming_cover.png')}}" alt="">
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+            <div class="carousel-item card">
+              <div class="card-header"> <span>Explore Food Choices</span>
+                <!-- <button class="" type="click" href="">View More Posts About Gaming</button>--> 
+              </div>
+              <div class="card-body">
+                <img src="{{url_for('static', filename='images/content/food_cover.png')}}" alt="">
+                <div class="card-details">
+
+                </div>
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+            <div class="carousel-item card">
+              <div class="card-header"> <span>Explore Travel Destinations</span>
+                <!-- <button class="" type="click" href="">View More Posts About Gaming</button>--> 
+              </div>
+              <div class="card-body">
+                <img src="{{url_for('static', filename='images/content/gaming_cover.png')}}" alt="">
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!--
+      -->
+      </div>
+    </div>
+
+    <div class="container-fluid row">
+      <div class="col-sm">
+        
+      </div>
+      <div class="col-sm">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid justify-content-between sticky-bottom" id="base-footer">
+    <footer>
+      <div class="row justify-content-around mb-0 pt-5 mx-4">
+          <div class="col-xl-2 col-md-4 order-xl-1 order-4 mr-xl-0 my-auto">
+            <ul class="list-unstyled mt-md-3 mt-5">
+              <li>Social Media</li>
+              <li class="social"> 
+                <span> <i class="fa fa-facebook" aria-hidden="true"></i></span>  
+                <span> <i class="fa fa-instagram" aria-hidden="true"></i> </span>
+                <span> <i class="fa fa-twitter" aria-hidden="true"></i> </span> 
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-2 col-md-3 pt-4 order-1">
+            <ul class="list-unstyled">
+              <li class="mt-md-0 mt-4">Our Solution</li>
+              <li>Intergrated Security </li>
+              <li>Core Features</li>
+              <li>Product Features</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+          <div class="col-xl-2 col-md-3 pt-4 order-2">
+            <ul class="list-unstyled">
+              <li class="mt-md-0 mt-4">Your needs</li>
+              <li>Intergrated Security </li>
+              <li>Core Features</li>
+              <li>Product Features</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+          <div class="col-xl-auto col-md-3 pt-4 my-sm-0 order-md-3 order-sm-1 ">
+            <ul class="list-unstyled">
+              <li class="mt-md-0 mt-4">Offer</li>
+              <li>Intergrated Security </li>
+              <li>Core Features</li>
+              <li>Product Features</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+          <div class="col-xl-auto col-md-6 col-12  pt-4 my-sm-0 order-6  ">
+            <div class="form-group ">
+              <label for="email" class="mb-3">
+                <b>Subscribe to our newsletter for quick updates</b>
+              </label>
+              <input type="email" class="form-control form-control-lg" placeholder="Enter email" id="email">
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block my-2 Subscribe mt-4 mb-3">
+              Subscribe
+            </button>
+          </div>
+      </div>
+      <div class="row justify-content-center px-3 py-3 pt-5">
+        <div class="col text-center">
+          <p class="mb-0">Copyright © 2024 by Olumide Osuntuyi | All images, logos and names are used with permission</p>
+        </div>
+      </div>
+  </footer>
+</div>
+{% endblock %}

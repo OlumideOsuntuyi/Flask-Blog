@@ -1,0 +1,398 @@
+.welcome-row
+{
+    width: 100%;
+    height: fit-content;
+    padding: 0.5em 0.5em;
+}
+
+.welcome-area
+{
+    height: fit-content;
+    padding: 0.5em;
+
+    align-items: center;
+}
+
+.welcome-area .section-title
+{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: var(--background-color-2);
+
+    border: solid;
+    border-color: transparent;
+    border-radius: 0em 0em 0.5em 0.5em;
+    transition: all 0.5s ease;
+}
+
+.welcome-area:hover .section-title
+{
+    border-color: var(--accent-color);
+    transition: all 0.5s ease;
+}
+
+
+.welcome-content
+{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--background-color-2);
+    border-radius: 0.5em 0.5em 0 0;
+    border-color: var(--secondary-color);
+}
+
+.welcome-body
+{
+    background-color: var(--background-color-3);
+    flex-grow: 1;
+    height: fit-content;
+    gap: 1em;
+    
+    border-radius: 0.5em 0.5em 0 0;
+    padding: 1em 0.2em;
+}
+
+
+/* Feed */
+.feed
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    min-height: 20em;
+    max-height: 30em;
+    height: fit-content;
+    padding: 0em 0.2em;
+    overflow-y: auto;
+    gap: 1em;
+}
+
+.feed .feed-title
+{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.2em 0.2em;
+}
+
+.fd-post
+{
+    width: 100%;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.fd-post .card-header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 3em;
+    padding: 0.2em 0.5em;
+    background-color: var(--background-color-2);
+    transition: all 0.5s ease;
+}
+
+.fd-post .card-header span 
+{
+    width: 100%;
+    height: 100%;
+}
+
+.fd-post .card-header img
+{
+    border: solid;
+    border-radius: 5em;
+    border-width: 0.2em;
+    border-color: var(--accent-color);
+    height: 100%;
+    width: auto;
+
+    margin-right: 1em;
+}
+
+.fd-post .card-header .author-details
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fd-post .card-header .name-time
+{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 0.7em;
+}
+
+.fd-post .card-header .name
+{
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.fd-post .card-header .date
+{
+    color: var(--secondary-color);
+    font-size: 0.5em;
+}
+
+.fd-post .card-header button
+{
+    float: right;
+    width: fit-content;
+    height: fit-content;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.8rem;
+    background-color: var(--accent-color);
+    border: solid;
+    border-width: 0rem;
+    border-radius: 0.25rem;
+    box-shadow: -0.1rem 0.1rem 0.1rem var(--secondary-color);
+    transition: all 0.5s ease;
+}
+
+.fd-post .card-header button:hover
+{
+    background-color: var(--accent-color-2);
+    padding: 0.4em 1.2em;
+    border-radius: 0.6em;
+    box-shadow: 0.2em 0.2em 0.2em var(--background-color-2);
+    transition: all 0.5s ease;
+}
+
+.fd-post:hover .card-header button
+{
+    animation: rotate 5s infinite ease;
+}
+
+@keyframes rotate
+{
+    0%
+    {
+        rotate: 0deg;
+    }
+    25%
+    {
+        rotate: 5deg;
+        scale: 0.9;
+    }
+    100%
+    {
+        rotate: 0deg;
+    }
+}
+
+
+@media screen and (max-width:800px) 
+{
+    .fd-post .card-header button
+    {
+        height: 1rem;
+        font-size: 0.7em;
+    }
+}
+
+/* Post Content */
+.fd-post .card-body
+{
+    background-color: var(--background-color-3);
+
+    color: var(--text-color);
+    height: fit-content;
+    min-height: 2em;
+    padding: 1em 0.5em;
+}
+
+.fd-post:hover .card-body
+{
+    background-color: var(--background-color);
+    transition: all 0.5s ease;
+}
+
+
+.fd-post .card-body .text
+{
+    font-size: 0.75em;
+}
+
+
+/* Post Footer */
+.fd-post .card-footer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    background-color: var(--background-color-2);
+}
+
+.fd-post .card-footer .ini-btns
+{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fd-post .card-footer .rmn-btns
+{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.tg-btn
+{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+    padding: 0.35em 0.9em 0.35em 0.7em;
+    gap: 0.5em;
+    overflow: hidden;
+}
+
+.tg-btn input
+{
+    display: none;
+}
+  
+  
+.tg-btn-lbl 
+{
+    float: left;
+    width: fit-content;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5em;
+}
+  
+.tg-btn .tg-btn-ico 
+{
+    fill: var(--text-color);
+    height: auto;
+    width: 1.4em;
+}
+
+.tg-btn-txt
+{
+    width: fit-content;
+    height: 100%;
+
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+    font-size: 0.7em;
+    transition: all 0s ease-out;
+}
+  
+.tg-btn-txt.two 
+{
+    display: none;
+}
+  
+.tg-btn-on:checked ~ .tg-btn-lbl .tg-btn-ico  
+{
+    fill: var(--accent-color-2);
+    animation: enlarge 0.2s ease-out 1;
+    transition: all 0.2s ease-out;
+}
+  
+.tg-btn-on:checked ~ .tg-btn-txt.two 
+{
+    display: inline;
+    width: fit-content;
+    height: 100%;
+    color: var(--accent-color-2);
+    transition: all 0s ease;
+}
+  
+.tg-btn-on:checked ~ .tg-btn-txt.one 
+{
+    display: none;
+}
+
+@keyframes enlarge 
+{
+    0% 
+    {
+        transform: scale(0.5);
+    }
+    100% 
+    {
+        transform: scale(1.2);
+    }
+}
+
+.fd-post .comment-button
+{
+    display: inline-flex;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    border-width: 0;
+    gap: 0.3em;
+}
+
+.fd-post .comment-button svg
+{
+    fill: var(--text-color);
+}
+
+.fd-post .comment-button span
+{
+    width: fit-content;
+    height: 100%;
+
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+    font-size: 0.7em;
+    transition: all 0s ease-out;
+}
+
+.bmk-btn
+{
+    float: right;
+    background-color: var(clear-color) !important;
+}

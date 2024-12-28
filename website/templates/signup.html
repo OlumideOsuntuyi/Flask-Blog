@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %} Sign up {% endblock %}
+
+{% block content %}
+
+<div class="container login">
+    <form method="POST"  class="card py-3 px-2">
+        <h3 align="center"> Create A New Account </h3>
+        <div class="form-group">
+            <label for="email">Email Adress</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email" 
+                placeholder="Enter email address"
+            />
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="firstName" 
+                name="firstName" 
+                placeholder="Enter first name"
+            />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="lastName" 
+                name="lastName" 
+                placeholder="Enter last name"
+            />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                name="password" 
+                placeholder="Enter password"
+            />
+        </div>
+        <span class="redirect">
+            Already have an account ? 
+            <a href="/login">Login</a>
+        </span>
+        <div class="form-button">
+            <button 
+                type="submit" 
+                class="btn btn-primary"
+            >
+            <div class="button-background">CREATE NEW ACCOUNT</div>
+            </button>
+        </div>
+    </form>
+    
+</div>
+
+<br />
+
+{% endblock %}

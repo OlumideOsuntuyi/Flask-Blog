@@ -1,0 +1,263 @@
+#home-page
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
+
+  background-color: var(--background-color-2);
+  border: solid;
+  border-width: 0em;
+  border-radius: 0em 0em 2em 2em;
+  box-shadow: 0.2em 0.2em 0.2em var(--background-color-3);
+
+  padding: 0.5em 0em 1em 0em;
+}
+
+.news-section
+{
+  height: fit-content;
+}
+
+.news-container
+{
+  height: 100%;
+}
+
+
+.article-section
+{
+    display: flex;
+    height: fit-content;
+    gap: 1em;
+}
+
+.article-list
+{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0.1em 0.5em 1em 0.5em;
+    gap: 0.75em;
+    box-shadow: 0.2em 0.2em 0.2em var(--background-color-2);
+}
+
+.article-list-title
+{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.2em 0.05em;
+  border: solid;
+  border-color: var(--background-color-3);
+  border-width: 0em 0em 0.2em 0em;
+  border-radius: 0em 0em 0.2em 0em;
+
+  transition: all 0.5s ease;
+}
+
+.article-list-title:hover
+{
+  border-color: var(--accent-color);
+}
+
+article
+{
+  font-size: 0.75em;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  width: 100%;
+  max-width: 100%;
+
+  border: solid;
+  border-radius: 0.1em;
+  border-width: 0.05em;
+  border-color: var(--background-color-3);
+
+  box-shadow: 0.2em 0.2em 0.3em var(--background-color-2);
+  padding: 0.4em 0.4em;
+  transition: all 0.5s ease;
+}
+
+article:hover
+{
+  box-shadow: 0.1em 0.1em 0.2em var(--accent-color);
+  transition: all 0.5s ease;
+}
+
+.carousel-inner
+{
+  height: 100%;
+}
+
+article.carousel-item
+{
+  height: 100%;
+}
+
+article .post-image
+{
+  border: solid;
+  border-radius: 0.2em;
+  border-width: 0;
+  overflow: hidden;
+
+  width: 100%;
+}
+
+.post-image img
+{
+  width: 100%;
+  height: 100%;
+}
+
+article .post-content
+{
+  padding: 0.5em 0.5em;
+
+  display: flex;
+
+  margin: 0.5em 0em 0em 0em;
+
+  border:solid;
+  border-width: 0.1em 0em 0em 0.1em;
+  border-radius: 0.5em 0 0 0;
+  border-color: var(--background-color-3);
+
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+article:hover>.post-content
+{
+  border-color: var(--accent-color);
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 800px) 
+{
+  article
+  {
+    font-size: 0.85em;
+  }
+}
+
+.exp-sc
+{
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  padding: 0.1em 0.5em 1em 0.5em;
+  gap: 0.75em;
+
+  box-shadow: 0.2em 0.2em 0.2em var(--background-color-2);
+}
+
+.exp-sc .carousel
+{
+  flex-grow: 1;
+  height: 100%;
+}
+
+.exp-sc li
+{
+  background-color: var(--secondary-color);
+  transition: all 0.5s ease;
+}
+
+.exp-sc li.active
+{
+  background-color: var(--accent-color);
+  transition: all 0.5s ease;
+}
+
+.exp-crl .card
+{
+  height: 100%;
+  background-color: var(--background-color-3);
+  margin-bottom: 1em;
+}
+
+.exp-crl .card-header
+{
+  flex: 1 0 fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1em 1em;
+}
+
+.exp-crl .card-body
+{
+  position: relative;
+  background-color: var(--background-color-2);
+  overflow: hidden;
+
+  border: none;
+  border-radius: 0.5em;
+  border-width: 0;
+
+  height: 15em;
+
+  margin: 0.1em 0.2em;
+}
+
+.exp-crl .card-header button
+{
+  float: right;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3em 0.8em;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  border: solid;
+  border-width: 0em;
+  border-radius: 0.5em;
+  box-shadow: -0.1em 0.1em 0.4em black;
+  transition: all 0.5s ease;
+}
+
+.card-body img
+{
+  position: absolute;
+  inset:  0;
+  height: auto;
+  width: 100%;
+  filter: grayscale();
+  transition: all 0.5s ease;
+}
+
+
+.carousel-item.active .card-body img
+{
+  filter: none;
+  transition: all 0.5s ease;
+}
+
+.exp-crl .card-footer
+{
+  height: fit-content;
+  padding: 0.75em 0.5em;
+  border-color: var(--accent-color) var(--background-color-2) var(--background-color-2) var(--background-color-2);
+}
+
+.exp-crl .card-header button:hover
+{
+    background-color: var(--accent-color-2);
+    padding: 0.6em 1.2em;
+    border-radius: 0.6em;
+    box-shadow: 0.3em 0.3em 0.4em black;
+    transition: all 0.5s ease;
+}

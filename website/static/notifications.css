@@ -1,0 +1,315 @@
+.notifications
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+
+    background-color: var(--background-color-2);
+    width: fit-content !important;
+    height: 100%;
+    float: right;
+
+    padding: 0.2em 0.5em;
+    margin: 0em 0.5em;
+    border-radius: 0.5em 0.5em 0 0;
+    border-color: var(--secondary-color);
+    border-width: 0 0 0 0.5em;
+
+    transition: all 0.5s ease;
+}
+
+.notifications:hover
+{
+    border-color: var(--accent-color);
+
+    transition: all 0.5s ease;
+}
+
+.notifications span
+{
+    display: inline-flex;
+    width: 100%;
+    height: 3em;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5em 0em;
+
+    border: solid;
+    border-width: 0em 0em 0.15em 0em;
+    border-color: var(--secondary-color);
+}
+
+.notifications span .title
+{
+    height: 100%;
+    float: left;
+    font-size: 0.75em;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+.notifications span .badge
+{
+    background-color: var(--accent-color);
+    float: right;
+    width: 2.0em;
+    height: 2.0em;
+    margin-right: 1em;
+    border-radius: 0.5em;
+    border-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.5s ease;
+}
+
+.notifications span .badge:hover
+{
+    background-color: var(--accent-color-2);
+    width: 2.3em;
+    height: 2.5em;
+    transition: all 0.5s ease;
+}
+
+.notifications span .badge svg
+{
+    height: 100%;
+    width: auto;
+}
+
+.notifications .list
+{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+}
+
+.ntf-crd
+{
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5em !important;
+    background-color: var(--clear-color);
+    transition: all 0.5s ease;
+}
+
+.ntf-crd:hover
+{
+    background-color: var(--background-color);
+    transition: all 0.5s ease;
+}
+
+.ntf-crd .ntf-title
+{
+    width: 3em;
+    height: 3em;
+}
+
+.ntf-crd .ntf-img
+{
+    float: left;
+    width: 3em;
+    height: 3em;
+
+    border: solid;
+    border-width: 0.15;
+    border-radius: 3em;
+    border-color: var(--accent-color);
+
+    overflow: hidden;
+}
+
+.ntf-img.ntf-tool-tip
+{
+    position: relative;
+}
+
+.ntf-img.t-tp-tr~.t-tp.card-anchor
+{
+    display: flex;
+    opacity: 0;
+
+    position: absolute;
+    width: 10em;
+    height: 0em;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.ntf-img.t-tp-tr:hover~.t-tp.card-anchor
+{
+    display: flex;
+    height: 15em;
+    top: 4em;
+    left: 0em;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.card-anchor .card-blur
+{
+    width: 100%;
+    height: 100%;
+
+    background: conic-gradient(from var(--button-conic-deg), 
+        var(--accent-color), 
+        var(--accent-color-2), var(--accent-color-2-gradient-2),
+        var(--accent-color-gradient-1));
+        
+    transition: all 0.5s ease;
+
+    animation: button_gradient 2s linear infinite;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; 
+}
+
+.card-anchor .card-blur::before 
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.card-anchor .card
+{
+    position: absolute;
+    inset: 0;
+    background-color: var(--background-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 0.2em !important;
+    padding: 0.2em 0;
+}
+
+.card-anchor .card-body
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.card-anchor .card-title
+{
+    font-size: 1em;
+
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 0.5em;
+    padding: 0.5em 0.1em;
+
+    border: solid;
+    border-width: 0em 0em 0.2em 0em;
+    border-color: var(--accent-color);
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card-anchor .card-title .pr-nm
+{
+    font-size: 1em;
+    color: var(--text-color-hover);
+}
+
+.card-anchor .pr-des
+{
+    font-size: 0.7em;
+    color: var(--accent-color);
+}
+
+.ntf-crd .ntf-btns button
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    float: right;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+
+    width: 7rem;
+    height: 2rem;
+
+    border: solid;
+    border-width: 0em;
+    border-radius: 0.3rem;
+
+    font-size: 0.7rem;
+    transition: all 0.5s ease;
+}
+
+.ntf-crd .ntf-btns button:hover
+{
+    background-color: var(--accent-color-2);
+    color: var(--text-color-hover);
+    width: 7.5rem;
+    height: 2.75rem;
+    border-color: transparent;
+    box-shadow: 0.2rem 0.2rem 0.3rem var(--background-color-2);
+    transition: all 0.5s ease;
+}
+
+.ntf-crd .ntf-txt
+{
+    font-size: 0.7em;
+    margin: 0.5em 0 0 0;
+    padding: 0.2em !important;
+}
+
+@media screen and (max-width: 800px) 
+{
+    .ntf-crd .ntf-btns button
+    {
+       font-size: 0.6em; 
+       width: 5rem;
+       height: 1.3rem;
+    }
+    
+    .ntf-crd .ntf-btns button:hover
+    {
+        width: 5.5rem;
+        height: 1.75rem;
+    }
+}
+
+.notifications button
+{
+    display: none;
+
+    background-color: var(--clear-color);
+    color: var(--text-color);
+    border: none;
+    width: 100%;
+    height: 2em;
+    font-size: 0.8em;
+
+    text-align: center;
+}
