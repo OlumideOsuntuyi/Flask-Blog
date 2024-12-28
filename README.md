@@ -1,1 +1,3 @@
-## Simple web application written in Flask
+## HOTPOT mini social website
+### written in flask via python and bootstrap
+
