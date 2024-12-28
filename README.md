@@ -1,5 +1,5 @@
 # HOTPOT 
-A mini social website
+A mini social website  ![LANGUAGE](https://img.shields.io/badge/python-purple)
 ### Description
 A social web application written in python, html, css, js running on a local server
 
