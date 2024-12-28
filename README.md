@@ -1,5 +1,5 @@
 ## HOTPOT mini social website
-### written in ython, html, css, js
+### written in python, html, css, js
 
 Using
 - Flask
