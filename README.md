@@ -1,3 +1,8 @@
 ## HOTPOT mini social website
-### written in flask via python and bootstrap
+### written in ython, html, css, js
+
+Using
+- Flask
+- Boottrap 5
+- Font Awesome
 
