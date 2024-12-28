@@ -1,7 +1,8 @@
 ## HOTPOT mini social website
-### written in python, html, css, js
+### Description
+A social web application written in python, html, css, js running on a local server
 
-Using
+### Frameworks
 - Flask
 - Boottrap 5
 - Font Awesome
